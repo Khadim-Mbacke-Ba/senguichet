@@ -1,0 +1,167 @@
+/* ============================================================
+   Styles SenGuichet - CSS classique (pas de framework)
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8f9fb;
+  color: #1a3a5c;
+  line-height: 1.5;
+}
+
+.conteneur {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* En-tete */
+.entete {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.entete h1 {
+  color: #1a3a5c;
+  font-size: 2.2rem;
+}
+
+.entete p {
+  color: #5a6c80;
+  font-size: 1rem;
+}
+
+/* Cartes */
+.carte {
+  background: #fff;
+  border: 1px solid #e0e4ea;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.carte h2 {
+  color: #1a5599;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+/* Formulaire */
+.formulaire {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.formulaire input,
+.formulaire select,
+.actions select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #c0c8d4;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.formulaire input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.formulaire button {
+  background-color: #1a5599;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.formulaire button:hover {
+  background-color: #14457d;
+}
+
+/* Tableau */
+.tableau {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableau th,
+.tableau td {
+  text-align: left;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid #eceef2;
+  font-size: 0.9rem;
+}
+
+.tableau th {
+  color: #5a6c80;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+/* Badge de statut */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.actions select {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.bouton-suppr {
+  background-color: #fff;
+  color: #cc1f1f;
+  border: 1px solid #cc1f1f;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.bouton-suppr:hover {
+  background-color: #cc1f1f;
+  color: #fff;
+}
+
+/* Message d'erreur */
+.erreur {
+  background-color: #ffebeb;
+  color: #cc1f1f;
+  border: 1px solid #cc1f1f;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* Pied de page */
+.pied {
+  text-align: center;
+  color: #5a6c80;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+}

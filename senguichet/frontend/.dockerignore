@@ -1,0 +1,15 @@
+
+# Dépendances locales Windows
+node_modules
+
+# Fichiers générés
+dist
+
+# Configuration Git
+.git
+.gitignore
+
+# Fichiers temporaires
+npm-debug.log
+.DS_Store
+docker run -d -p 3000:80 --name senguichet-web senguichet-frontend

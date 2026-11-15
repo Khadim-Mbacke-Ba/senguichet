@@ -1,0 +1,57 @@
+
+services:
+  # Base de données PostgreSQL
+  db:
+    image: postgres:16
+    container_name: senguichet-db
+    environment:
+      POSTGRES_DB: senguichet
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - senguichet-db-data:/var/lib/postgresql/data
+    networks:
+      - senguichet-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d senguichet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend Spring Boot
+  backend:
+    build: ./backend
+    container_name: senguichet-back
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: senguichet
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+    ports:
+      - "8080:8080"
+    networks:
+      - senguichet-net
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Frontend React + Nginx
+  frontend:
+    build: ./frontend
+    container_name: senguichet-front
+    ports:
+      - "3000:80"
+    networks:
+      - senguichet-net
+    depends_on:
+      - backend
+
+# Volumes persistants
+volumes:
+  senguichet-db-data:
+
+# Réseau Docker
+networks:
+  senguichet-net:
+    driver: bridge

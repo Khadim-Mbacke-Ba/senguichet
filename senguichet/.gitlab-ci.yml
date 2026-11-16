@@ -1,8 +1,0 @@
-
-# Mon premier pipeline GitLab CI
-
-# Un seul job qui affiche un message
-hello:
-  script:
-    - echo "Bonjour depuis le pipeline SenGuichet !"
-    - echo "Ce job tourne sur un Runner GitLab :)"

@@ -1,5 +1,7 @@
 
-name: Mon premier pipeline SenGuichet
+# Pipeline SenGuichet : tests du backend
+
+name: Tests du backend SenGuichet
 
 on:
   push:
@@ -7,15 +9,29 @@ on:
       - main
       - feature/ci-hello
 
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  hello:
+  test-backend:
+    name: Tests du backend
     runs-on: ubuntu-latest
 
     steps:
+      # Récupération du code source
       - name: Récupérer le code
         uses: actions/checkout@v4
 
-      - name: Afficher un message
-        run: |
-          echo "Bonjour depuis le pipeline SenGuichet !"
-          echo "Ce job tourne sur GitHub Actions."
+      # Installation de Java 17
+      - name: Configurer Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      # Exécution des tests Maven
+      - name: Lancer les tests du backend
+        working-directory: backend
+        run: mvn test

@@ -35,3 +35,4 @@ jobs:
       - name: Lancer les tests du backend
         working-directory: backend
         run: mvn test
+#Les tests du backend sont exécutés dans un conteneur Docker avec PostgreSQL comme base de données.

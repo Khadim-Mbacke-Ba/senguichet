@@ -15,9 +15,11 @@ frontend/build/
 .env.local
 *.env
 
+
 # ===== IDE =====
 .idea/
 .vscode/
+
 *.iml
 .classpath
 .project

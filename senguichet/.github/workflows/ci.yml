@@ -19,3 +19,11 @@ jobs:
         run: |
           echo "Bonjour depuis le pipeline SenGuichet !"
           echo "Ce job tourne sur GitHub Actions."
+
+  test-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test de la variable secrète
+        run: |
+          echo "Test de la variable secrète"
+          echo "$MA_VARIABLE_SECRETE"
